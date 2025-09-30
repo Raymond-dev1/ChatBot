@@ -1,4 +1,3 @@
-const { number } = require('joi');
 const mongoose=require('mongoose');
 
 const itemSchema=new mongoose.Schema({
@@ -20,7 +19,6 @@ const itemSchema=new mongoose.Schema({
     vendor:{
         type:String,
         required:true,
-        unique:true
     },
     postedAt:{
         type:Date,

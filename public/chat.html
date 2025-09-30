@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/chat.css"/>
+    <script src="/chat.js" defer></script>
+    <title>RESTAURANT CHATBOT</title>
+</head>
+<body>
+        <!-- <p>Below you would find the guidelines to purchase any item </p> -->
+    <!-- <audio controls  src="/assets/Recording.m4a" > Your browser does not support the audio element.
+</audio> -->
+    <div class="chatface">
+        <div class="headline">
+        <h1>
+            Raymond Restaurant ChatBot
+        </h1>
+        </div>
+    <div type="checkbox" id="items-container">
+        <div class="message bot">
+            <p>Welcome to Raymond Restaurant</p>
+            <p>Below you will find the instructions for interactions</p>
+            <ul  class="Ins">
+                <li>Type 1 to view all items </li>
+                <li>Type 97 to view current order</li>
+                <li>Type 99 to checkout your orders</li>
+                <li>Type 98 to get order hIstory</li>
+                <li>Type 0 to cancel order</li>
+            </ul>
+        </div>
+    </div>
+    <form id ="form">
+        <input type ="text" id="input" autocomplete="off" placeholder="choose an option" />
+        <button id="sendButton"type="submit" aria-label="Send message">➤</button>
+    </form>
+ </div>
+</body>
+</html>

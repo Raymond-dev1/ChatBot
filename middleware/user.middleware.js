@@ -1,16 +1,5 @@
 const joi =require('joi');
 
-const setUserCookie=(req, res, next) => {
-    const userId = req.body
-    if(userId){
-        res.cookie("userSession", userId, {
-         httpOnly: true,
-         maxAge: 60*60*1000,  //1 hour
-    });
-}
-   next();
-}
-
 const validateUserCreation=(req,res,next)=>{
     const userSchema=joi.object({
         firstName:joi.string().min(3).max(20).required(),
@@ -32,5 +21,5 @@ const validateUserCreation=(req,res,next)=>{
 
 module.exports={
     validateUserCreation,
-    setUserCookie
+
 }

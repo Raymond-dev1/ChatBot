@@ -4,15 +4,27 @@ const mongoose=require('mongoose')
 dotenv.config()
 const connectDB=async()=>{
     try {
-        await mongoose.connect(process.env.MONGO_URI,{
-            useNewUrlParser:true,
-            useUnifiedTopology:true,
-        })
+        await mongoose.connect(process.env.MONGO_URI)
         console.log('MongoDB connected successfully')
     } catch (error) {
         console.error('MongoDB connection error:',error)
-        process.exit(1)
     }
 }
+
+//Dropped an index for duplicate errors
+
+
+// const db = mongoose.connection
+// db.once('open', async () => {
+//   try {
+//     await db.collection('items').dropIndex('vendor_1');
+//     console.log('Dropped vendor_1 index successfully');
+//   } catch (err) {
+//     console.error('Error dropping index:', err.message);
+//   } finally {
+//     mongoose.disconnect();
+//   }
+// });
+
 
 module.exports={connectDB}

@@ -9,21 +9,26 @@ const CreateUser=async(req,res)=>{
     if(!serviceResponse.success){
         return res.status(serviceResponse.status).json(serviceResponse);
     }
+
     return res.status(serviceResponse.status).json(serviceResponse) 
     }catch(error){
         console.error('Error in CreateUser controller:',error);
-        return res.status(500).json({status:500,success:false,message:'Internal Server Error'});
+        return res.status(500).json({status:500,success:false,message: ("Name already taken , please try again")});
     }
 }   
 const LoginUser=async(req,res)=>{
     try{
         const payload=req.body;
-
+        
         const serviceResponse=await userService.LoginUser(payload.firstName,payload.lastName);
         if(!serviceResponse.success){
             return res.status(serviceResponse.status).json(serviceResponse);
         }
+        req.session.userId=serviceResponse.data._id;
+        console.log('Session after login:', req.session.userId);
+
         return res.status(serviceResponse.status).json(serviceResponse);
+
     }catch(error){
         console.error("Error in LoginUser controller:",error);
         return res.status(500).json({status:500,success:false,message:'Internal Server Error'});

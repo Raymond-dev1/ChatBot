@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="/index.css"/>
+    <title>signup</title>
+</head>
+<body>
+    <div class="signup-section">
+        <form id="signup-form">
+            <input id="firstName" type="text" placeholder="First Name">
+            <input id="lastName"  type="text" placeholder="Last Name">
+            <select id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                </select>
+        <button id="submit" type="submit">signup</button>
+        <p> Already have an account ? <button id="redirect" type="button">Login</button></p> 
+        
+        <div id="message-area" style="margin-top: 10px;"></div>
+        </form>
+    </div>
+</body>
+</html>
